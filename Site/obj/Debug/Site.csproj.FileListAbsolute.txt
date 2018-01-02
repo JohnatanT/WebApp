@@ -47,3 +47,7 @@ C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.csprojResolveAssemblyRefere
 C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.csproj.CoreCompileInputs.cache
 C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.dll
 C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.pdb
+C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.dll
+C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.SqlServer.dll
+C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.xml
+C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.SqlServer.xml

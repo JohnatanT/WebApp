@@ -1,0 +1,1 @@
+Enable-Migrations -ContextType Site.Models.MyContext

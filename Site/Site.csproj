@@ -153,7 +153,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\PessoaModels.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MyContext.cs" />
+    <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
