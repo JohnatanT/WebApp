@@ -9,6 +9,11 @@ namespace Site.Models
 {
     public class MyContext : DbContext
     {
+        public MyContext()
+            : base(ConfigurationManager.ConnectionStrings["conexao"].ConnectionString)
+        {
+
+        }
 
         public DbSet<Pessoa> Pessoa { get; set; }
 

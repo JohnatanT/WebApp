@@ -2,3 +2,11 @@ Enable-Migrations -ContextType Site.Models.MyContext  //Habilitar
 
 Add-Migration Start(nome opcional)  //Cria um arquivo com o que é necessário ter entre sua aplicação e o DB
 
+Update-Database //Verifica e aplica todos os Migrations
+
+/* Para atualizações(Ex: NomeMae no Model Pessoa), basta criar um novo Migration */
+
+Add-Migration Mae(nome opcional)
+
+Update-Database //Verifica os Migrations e aplica
+

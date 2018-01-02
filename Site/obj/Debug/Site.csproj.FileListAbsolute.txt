@@ -51,3 +51,5 @@ C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.dll
 C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.SqlServer.dll
 C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.xml
 C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.SqlServer.xml
+C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.Migrations.Start.resources
+C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.csproj.GenerateResource.Cache
