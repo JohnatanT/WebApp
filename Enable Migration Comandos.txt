@@ -1,1 +1,4 @@
-Enable-Migrations -ContextType Site.Models.MyContext
+Enable-Migrations -ContextType Site.Models.MyContext  //Habilitar
+
+Add-Migration Start(nome opcional)  //Cria um arquivo com o que é necessário ter entre sua aplicação e o DB
+
