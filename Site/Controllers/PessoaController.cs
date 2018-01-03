@@ -16,48 +16,38 @@ namespace Site.Controllers
             return View();
         }
 
+        //Página de Create
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
+        //Cadastrar Pessoa
         [HttpPost]
         public ActionResult Create(Pessoa model)
         {
 
             ModelState.Remove("Codigo");
-            List<Pessoa> lista = new List<Pessoa>();
+           
+            if (ModelState.IsValid) {
 
-            if (ModelState.IsValid) { 
-
-            //if(Session["Lista Pessoas"] != null){
-            //    lista.AddRange((List<Pessoa>)Session["Lista Pessoas"]);
-            //}
-            //    lista.Add(model);
-            //    Session["Lista Pessoas"] = lista;
+                PessoaService srv = new PessoaService();
+                srv.Salvar(model);
+                return View("List",srv.Listar());
             }
             else
                 return View(model);
-            return View("List");
- 
+     
         }
 
 
-
+        //Listar Pessoas
         public ActionResult List()
         {
-            //if(Session["Lista Pessoas"] != null)
-            //{
-            //    var model = (List<Pessoa>)Session["Lista Pessoas"];
 
-
-
-            //    return View(model);
-            //}
             PessoaService srv = new PessoaService();
-            
-
+           
             return View(srv.Listar());
 
         }
