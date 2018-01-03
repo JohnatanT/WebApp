@@ -6,6 +6,9 @@
 }
     <h2>Cadastro de Pessoas</h2>
 
+    <!-- Súmario de validação -->
+    @Html.ValidationSummary()
+
     <div class="container">
         @using (Html.BeginForm())
         {
@@ -14,19 +17,22 @@
 
         <div class="form-group">
             @Html.LabelFor(m => Model.Cpf)
+            @Html.ValidationMessageFor(m => Model.Cpf)
             @Html.TextBoxFor(m => Model.Cpf, new { @class = "form-control" })
-            @Html.ValidationMessageFor( m => Model.Cpf)
         </div>
         <div class="form-group">
             @Html.LabelFor(m => Model.Nome)
+            @Html.ValidationMessageFor(m => Model.Nome)
             @Html.TextBoxFor(m => Model.Nome, new { @class = "form-control" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => Model.SobreNome)
+            @Html.ValidationMessageFor(m => Model.SobreNome)
             @Html.TextBoxFor(m => Model.SobreNome, new { @class = "form-control" })
         </div>
         <div class="form-group">
             @Html.LabelFor(m => Model.Email)
+            @Html.ValidationMessageFor(m => Model.Email)
             @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
         </div>
         <div class="form-group">
