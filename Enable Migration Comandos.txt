@@ -10,3 +10,7 @@ Add-Migration Mae(nome opcional)
 
 Update-Database //Verifica os Migrations e aplica
 
+/* Voltar a versões anteriores */
+
+Update-Database -TargetMigration NomeMigration
+
