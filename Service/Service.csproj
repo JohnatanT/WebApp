@@ -54,12 +54,6 @@
     <Folder Include="Spec\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Site\Site.csproj">
-      <Project>{bdf8191b-97be-45f3-8d16-087a7bd02770}</Project>
-      <Name>Site</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
