@@ -52,86 +52,39 @@ namespace Site.Controllers
 
         }
 
+        //Página de Editar especifica de um ID
         public ActionResult Edit(int id)
         {
-            //Recuperar o objeto com o ID
-            //Enviar o objeto encontrado para a View de Edição
+            var srv = new PessoaService();
 
-            //if(((List<Pessoa>)Session["ListaPessoas"]).Where(p => p.Codigo == id).Any())
-            //{
-            //    var model = ((List<Pessoa>)Session["ListaPessoas"])
-            //    .Where(p => p.Codigo == id).FirstOrDefault();
-
-            //    return View("Create", model);
-            //}
-
-            return View("Create", new Pessoa());
+            return View("Create", srv.Obter(id));
         }
 
+        //Recebendo e salvando os arquivos editados
         [HttpPost]
         public ActionResult Edit(Pessoa model)
         {
-            //Recuperar o objeto com o ID
-            //Alterar como o objeto do parametro
-            //Aplicar/Salvar objeto alterado na fonte de dados
 
-            //if (Session["ListaPessoas"] != null)
-            //{
-
-                //    if (((List<Pessoa>)Session["ListaPessoas"]).Where(p => p.Codigo == model.Codigo).Any())
-                //    {
-                //        var modelBase = ((List<Pessoa>)Session["ListaPessoas"])
-                //        .Where(p => p.Codigo == model.Codigo).FirstOrDefault();
-
-                //        //Atualizar seu registro com o model enviado por parametro...
-                //        ((List<Pessoa>)Session["ListaPessoas"])[model.Codigo - 1] = model;
-
-                //    }
-
-                //    var lista = (List<Pessoa>)Session["ListaPessoas"];
-                //    return View("List", lista);
-
-
-                //}
-
-                //return View("Create", new Pessoa());
-                if (ModelState.IsValid)
-                {
-                    return View();
-                }
-                return View("Create", model);
-
-            
+            if (ModelState.IsValid)
+            {
+                PessoaService srv = new PessoaService();
+                srv.Salvar(model);
+                return View("List", srv.Listar());
+            }
+            else
+                return View("Create",model);
 
         }
 
 
-
+        //Deletar a pessoa da lista
         public ActionResult Delete(int id)
         {
 
-            //if(Session["ListaPessoas"] != null)
-            //{
+            PessoaService srv = new PessoaService();
+            srv.Deletar(id);
 
-            //    if (((List<Pessoa>)Session["ListaPessoas"]).Where(p => p.Codigo == id).Any())
-            //    {
-            //        var modelBase = ((List<Pessoa>)Session["ListaPessoas"])
-            //        .Where(p => p.Codigo == id).FirstOrDefault();
-
-            //        //Atualizar seu registro com o model enviado por parametro...
-
-            //        var lista = ((List<Pessoa>)Session["ListaPessoas"]);
-            //        lista.Remove(modelBase);
-
-            //        Session["ListaPessoas"] = lista;
-            //        return View("List", lista);
-
-            //    }
-
-            //}
-
-
-            return View("List", new List<Pessoa>());
+            return View("List", srv.Listar());
 
         }
 
