@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarrinhoComprasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,11 +158,18 @@
     <Compile Include="Migrations\201801022117481_Start.Designer.cs">
       <DependentUpon>201801022117481_Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801121832396_ModelToViewModel.cs" />
+    <Compile Include="Migrations\201801121832396_ModelToViewModel.Designer.cs">
+      <DependentUpon>201801121832396_ModelToViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyContext.cs" />
     <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Impl\PessoaService.cs" />
+    <Compile Include="ViewModel\CarrinhoCompasViewModel.cs" />
+    <Compile Include="ViewModel\PessoaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -203,6 +211,7 @@
     <Content Include="Views\Pessoa\Index.cshtml" />
     <Content Include="Views\Pessoa\Create.cshtml" />
     <Content Include="Views\Pessoa\List.cshtml" />
+    <Content Include="Views\CarrinhoCompras\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -223,6 +232,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801022117481_Start.resx">
       <DependentUpon>201801022117481_Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801121832396_ModelToViewModel.resx">
+      <DependentUpon>201801121832396_ModelToViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

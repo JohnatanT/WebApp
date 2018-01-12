@@ -25,16 +25,32 @@ namespace Site.Controllers
 
         //Cadastrar Pessoa
         [HttpPost]
-        public ActionResult Create(Pessoa model)
+        public ActionResult Create(PessoaViewModel model)
         {
 
             ModelState.Remove("Codigo");
            
             if (ModelState.IsValid) {
 
-                PessoaService srv = new PessoaService();
-                srv.Salvar(model);
-                return View("List",srv.Listar());
+                //Validação pra verificar se não é robô
+                if(model.Captcha == "123")
+                {
+
+                    //MODO HARD
+                    Pessoa p = new Pessoa();
+                    p.Codigo = model.Codigo;
+                    p.Nome = model.Nome;
+                    p.SobreNome = model.SobreNome;
+                    p.DataNascimento = model.DataNascimento;
+                    p.Cpf = model.Cpf;
+                    p.Email = model.Email;
+
+                    PessoaService srv = new PessoaService();
+                    srv.Salvar(p);
+                    return View("List",srv.Listar());
+
+                }
+                return View(model);
             }
             else
                 return View(model);
