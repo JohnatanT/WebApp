@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using Service.Impl;
 using Site.Models;
 
@@ -37,13 +38,16 @@ namespace Site.Controllers
                 {
 
                     //MODO HARD
-                    Pessoa p = new Pessoa();
-                    p.Codigo = model.Codigo;
-                    p.Nome = model.Nome;
-                    p.SobreNome = model.SobreNome;
-                    p.DataNascimento = model.DataNascimento;
-                    p.Cpf = model.Cpf;
-                    p.Email = model.Email;
+                    //Pessoa p = new Pessoa();
+                    //p.Codigo = model.Codigo;
+                    //p.Nome = model.Nome;
+                    //p.SobreNome = model.SobreNome;
+                    //p.DataNascimento = model.DataNascimento;
+                    //p.Cpf = model.Cpf;
+                    //p.Email = model.Email;
+
+                    //Transformar um objeto em outro
+                    var p = AutoMapper.Mapper.Map<PessoaViewModel,Pessoa>(model);
 
                     PessoaService srv = new PessoaService();
                     srv.Salvar(p);
@@ -71,9 +75,15 @@ namespace Site.Controllers
         //Página de Editar especifica de um ID
         public ActionResult Edit(int id)
         {
+
             var srv = new PessoaService();
 
-            return View("Create", srv.Obter(id));
+            var p = srv.Obter(id);
+
+            //Transformar um objeto em outro
+            var pVM = AutoMapper.Mapper.Map<Pessoa, PessoaViewModel>(p);
+
+            return View("Create", pVM);
         }
 
         //Recebendo e salvando os arquivos editados

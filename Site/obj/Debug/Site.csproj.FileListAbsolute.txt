@@ -54,3 +54,5 @@ C:\Users\johna\source\repos\Site\Site\bin\EntityFramework.SqlServer.xml
 C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.Migrations.Start.resources
 C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.csproj.GenerateResource.Cache
 C:\Users\johna\source\repos\Site\Site\obj\Debug\Site.Migrations.ModelToViewModel.resources
+C:\Users\johna\source\repos\Site\Site\bin\AutoMapper.dll
+C:\Users\johna\source\repos\Site\Site\bin\AutoMapper.xml
